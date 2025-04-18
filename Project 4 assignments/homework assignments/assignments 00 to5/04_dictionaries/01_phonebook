@@ -1,0 +1,101 @@
+#Problem Statement
+#In this program we show an example of using dictionaries to keep track of information in a phonebook.
+
+#Start Code:
+
+def main():
+    phonebook = {}  # empty dictionary to store contacts
+
+    while True:
+        print("\nPhonebook Menu:")
+        print("1. Add Contact")
+        print("2. Search Contact")
+        print("3. Show All Contacts")
+        print("4. Exit")
+
+        choice = input("Enter your choice (1-4): ")
+
+        if choice == '1':
+            name = input("Enter name: ")
+            number = input("Enter phone number: ")
+            phonebook[name] = number
+            print(f"{name} added successfully!")
+
+        elif choice == '2':
+            name = input("Enter name to search: ")
+            if name in phonebook:
+                print(f"{name}'s number is {phonebook[name]}")
+            else:
+                print(f"{name} not found in the phonebook.")
+
+        elif choice == '3':
+            if not phonebook:
+                print("Phonebook is empty.")
+            else:
+                print("\nContacts:")
+                for name, number in phonebook.items():
+                    print(f"{name}: {number}")
+
+        elif choice == '4':
+            print("Exiting phonebook. Goodbye!")
+            break
+
+        else:
+            print("Invalid choice. Please select 1-4.")
+
+# This provided line is required at the end of
+# Python file to call the main() function.
+if __name__ == '__main__':
+    main()
+
+#Solution
+
+def read_phone_numbers():
+    """
+    Ask the user for names/numbers to story in a phonebook (dictionary).
+    Returns the phonebook.
+    """
+    phonebook = {}                   # Create empty phonebook
+
+    while True:
+        name = input("Name: ")
+        if name == "":
+            break
+        number = input("Number: ")
+        phonebook[name] = number
+
+    return phonebook
+
+
+def print_phonebook(phonebook):
+    """
+    Prints out all the names/numbers in the phonebook.
+    """
+    for name in phonebook:
+        print(str(name) + " -> " + str(phonebook[name]))
+
+
+def lookup_numbers(phonebook):
+    """
+    Allow the user to lookup phone numbers in the phonebook
+    by looking up the number associated with a name.
+    """
+    while True:
+        name = input("Enter name to lookup: ")
+        if name == "":
+            break
+        if name not in phonebook:
+            print(name + " is not in the phonebook")
+        else:
+            print(phonebook[name])
+
+
+def main():
+    phonebook = read_phone_numbers()
+    print_phonebook(phonebook)
+    lookup_numbers(phonebook)
+
+
+# Python boilerplate.
+if __name__ == '__main__':
+    main()

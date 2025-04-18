@@ -1,0 +1,45 @@
+#Problem Statement
+#Write a program which continuously asks the user to enter values which are added one by one into a list. When the user presses enter without typing anything, print the list.
+#Here's a sample run (user input is in blue):
+#Enter a value: 1 Enter a value: 2 Enter a value: 3 Enter a value: Here's the list: ['1', '2', '3']
+
+#Starter Code :
+
+def main():
+    values_list = []  # Initialize an empty list
+    
+    while True:
+        value = input("Enter a value: ")  # Ask user for input
+        if value == "":  # If user presses Enter without typing anything
+            break  # Exit the loop
+        values_list.append(value)  # Add the value to the list
+    
+    print("Here's the list:", values_list)  # Print the final list
+
+# Python boilerplate to call the main function
+if __name__ == '__main__':
+    main()
+
+#Solution
+
+def main():
+    lst = []  # Make an empty list to store things in
+
+    val = input("Enter a value: ")  # Get an initial value
+    while val:  # While the user input isn't an empty value
+        lst.append(val)  # Add val to list
+        val = input("Enter a value: ")  # Get the next value to add
+
+    print("Here's the list:", lst)
+
+
+# This provided line is required at the end of the Python file to call the main() function.
+if __name__ == '__main__':
+    main()
+
+#Sample Run
+
+#Enter a value: apple  
+#Enter a value: banana  
+#Enter a value:  
+#Here's the list: ['apple', 'banana']

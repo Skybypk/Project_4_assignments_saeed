@@ -1,0 +1,38 @@
+#Problem Statement
+#10 even 11 odd 12 even 13 odd 14 even 15 odd 16 even 17 odd 18 even 19 odd
+
+#Starter Code
+def main():
+    # Start from 10 and go up to 19
+    for i in range(10, 20):
+        if i % 2 == 0:
+            print(f"{i} even")
+        else:
+            print(f"{i} odd")
+
+if __name__ == '__main__':
+    main()
+
+#Solution
+def main():
+    # Loop through numbers from 0 to 9
+    for i in range(10):
+        if is_odd(i):
+            print('odd')
+        else:
+            print('even')
+            
+def is_odd(value: int):
+    """
+    Checks to see if a value is odd. If it is, returns True.
+    """
+    # If the remainder when divided by 2 is 1, it's odd
+    remainder = value % 2
+    return remainder == 1
+
+# There's no need to edit code beyond this point
+if __name__ == '__main__':
+    main()
+
+#output
+#even odd even odd even odd even odd even odd

@@ -1,0 +1,42 @@
+# Problem Statement:
+# Write a program that continually reads in mass from the user and then outputs the equivalent energy
+# using Einstein's mass-energy equivalence formula:
+
+# E = m * c**2
+
+# Almost 100 years ago, Albert Einstein famously discovered that mass and energy are interchangeable.
+# You should ask the user for mass (m) in kilograms and use a constant value for the speed of light:
+# C = 299792458 m/s
+
+# Here's a sample run of the program:
+# Enter kilos of mass: 100
+# e = m * C^2...
+# m = 100.0 kg
+# C = 299792458 m/s
+# 8.987551787368176e+18 joules of energy!
+
+
+# Constant for the speed of light in meters per second
+
+C: int = 299792458  # m/s
+
+def main():
+    # Prompt the user to enter mass in kilograms
+    mass_in_kg: float = float(input("Enter kilos of mass: "))
+
+    # Calculate energy using Einstein's formula
+    energy_in_joules: float = mass_in_kg * (C ** 2)
+
+    # Display the calculation steps and result
+    print("e = m * C^2...")
+    print("m = " + str(mass_in_kg) + " kg")
+    print("C = " + str(C) + " m/s")
+    print(str(energy_in_joules) + " joules of energy!")
+
+# This provided line is required at the end of
+# the Python file to call the main() function.
+if __name__ == '__main__':
+    main()
+
+#Solution
+

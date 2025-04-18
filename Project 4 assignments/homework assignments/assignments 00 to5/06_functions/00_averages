@@ -1,0 +1,45 @@
+#Problem Statement
+#Write a function that takes two numbers and finds the average between the two.
+
+#Starter Code :
+
+def find_average(num1, num2):
+    # Formula for average: (num1 + num2) / 2
+    return (num1 + num2) / 2
+
+def main():
+    # Let’s ask the user to input two numbers
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+
+    # Call the function and store the result
+    average = find_average(num1, num2)
+
+    # Show the result
+    print("The average is:", average)
+
+# Required call to main
+if __name__ == '__main__':
+    main()
+#Solution
+def average(a: float, b: float):
+    """
+    Returns the number which is half way between a and b
+    """
+    sum = a + b
+    return sum / 2
+
+def main():
+    avg_1 = average(0, 10)
+    avg_2 = average(8, 10)
+    
+    final = average(avg_1, avg_2)
+    print("avg_1", avg_1)
+    print("avg_2", avg_2)
+    print("final", final)
+    
+
+# There is no need to edit code beyond this point
+
+if __name__ == '__main__':
+    main()
